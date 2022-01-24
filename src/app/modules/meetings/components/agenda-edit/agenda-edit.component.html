@@ -1,0 +1,69 @@
+<nb-card>
+  <nb-card-body>
+    <h4>Meeting Agenda</h4>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="agendaForm">
+      <div class="row">
+
+        <div class="col-12 col-md-3">
+          <nb-select fullWidth placeholder="Meeting">
+            <nb-option value="">Option empty</nb-option>
+          </nb-select>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <nb-select fullWidth placeholder="Presided By">
+            <nb-option value="">Option empty</nb-option>
+          </nb-select>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <input nbInput fullWidth placeholder="Meeting Date" [nbDatepicker]="dateTimePicker">
+          <nb-datepicker #dateTimePicker></nb-datepicker>
+        </div>
+
+        <div class="col-12 col-md-2">
+          <nb-select fullWidth placeholder="Meeting Format">
+            <nb-option value="">Option empty</nb-option>
+          </nb-select>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <nb-select fullWidth placeholder="Directed By">
+            <nb-option value="">Option empty</nb-option>
+          </nb-select>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <input
+            nbInput
+            type="text"
+            fullWidth
+            [nbTimepicker]="timepicker"
+          />
+          <nb-timepicker #timepicker></nb-timepicker>
+        </div>
+
+        <div class="col-6 col-md-2">
+          <input
+            nbInput
+            type="text"
+            fullWidth
+            [nbTimepicker]="timepicker"
+          />
+          <nb-timepicker #timepicker></nb-timepicker>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <nb-select fullWidth placeholder="Registered By">
+            <nb-option value="">Option empty</nb-option>
+          </nb-select>
+        </div>
+
+
+      </div>
+
+    </form>
+
+  </nb-card-body>
+</nb-card>
