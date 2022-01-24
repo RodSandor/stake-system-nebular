@@ -5,61 +5,151 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="agendaForm">
       <div class="row">
 
-        <div class="col-12 col-md-3">
-          <nb-select fullWidth placeholder="Meeting">
+        <div class="col-12 col-md-3 mt-3">
+          <nb-select
+            formControlName="type"
+            placeholder="Meeting"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-12 col-md-4">
-          <nb-select fullWidth placeholder="Presided By">
+        <div class="col-12 col-md-4 mt-3">
+          <nb-select
+            formControlName="presidedBy"
+            placeholder="Presided By"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-6 col-md-2">
-          <input nbInput fullWidth placeholder="Meeting Date" [nbDatepicker]="dateTimePicker">
+        <div class="col-6 col-md-2 mt-3">
+          <input
+            [nbDatepicker]="dateTimePicker"
+            placeholder="Meeting Date"
+            formControlName="date"
+            fullWidth
+            nbInput
+          >
           <nb-datepicker #dateTimePicker></nb-datepicker>
         </div>
 
-        <div class="col-12 col-md-2">
-          <nb-select fullWidth placeholder="Meeting Format">
+        <div class="col-12 col-md-2 mt-3">
+          <nb-select
+            placeholder="Meeting Format"
+            formControlName="attendance"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-12 col-md-4">
-          <nb-select fullWidth placeholder="Directed By">
+        <div class="col-12 col-md-4 mt-3">
+          <nb-select
+            formControlName="conductedBy"
+            placeholder="Conducted By"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-6 col-md-2">
+        <div class="col-6 col-md-2 mt-3">
           <input
-            nbInput
+            formControlName="startedAt"
+            [nbTimepicker]="timepicker"
             type="text"
             fullWidth
-            [nbTimepicker]="timepicker"
+            nbInput
           />
           <nb-timepicker #timepicker></nb-timepicker>
         </div>
 
-        <div class="col-6 col-md-2">
+        <div class="col-6 col-md-2 mt-3">
           <input
-            nbInput
+            [nbTimepicker]="timepicker"
+            formControlName="endedAt"
             type="text"
             fullWidth
-            [nbTimepicker]="timepicker"
+            nbInput
           />
           <nb-timepicker #timepicker></nb-timepicker>
         </div>
 
-        <div class="col-12 col-md-4">
-          <nb-select fullWidth placeholder="Registered By">
+        <div class="col-12 col-md-4 mt-3">
+          <nb-select
+            formControlName="registeredBy"
+            placeholder="Registered By"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
+        <div class="col-12 mt-3">
+          <button nbButton hero status="success" fullWidth>
+            <nb-icon icon="plus-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+          </button>
+        </div>
+
+        <!-- Start Topics -->
+        <div class="container mt-3">
+          <nb-card>
+            <nb-card-body>
+              <div class="row">
+                <div class="col-12 mt-3">
+                  <label for="notes">Notes</label>
+                  <textarea id="notes" nbInput fullWidth placeholder="Notes"></textarea>
+
+                </div>
+
+                <div class="col-12 mt-3">
+                  <label for="decisions">Decisions</label>
+                  <textarea id="decisions" nbInput fullWidth placeholder="Decisions"></textarea>
+
+                </div>
+
+                <div class="col-1 mt-3">
+                  <nb-actions size="small">
+                    <nb-action icon="plus-outline"></nb-action>
+                  </nb-actions>
+                </div>
+
+                <!-- Start Tasks -->
+                <div class="row">
+
+                    <div class="col-12 col-md-4 mt-3">
+                      <input type="text" nbInput fullWidth placeholder="Task">
+                    </div>
+
+                    <div class="col-12 col-md-4 mt-3">
+                      <nb-select fullWidth placeholder="Designated To">
+                        <nb-option value="">Option empty</nb-option>
+                      </nb-select>
+
+                    </div>
+
+                    <div class="col-2 mt-3">
+                      <input nbInput fullWidth placeholder="Due Date" [nbDatepicker]="dateTimePicker">
+                      <nb-datepicker #dateTimePicker></nb-datepicker>
+                    </div>
+
+                    <div class="col-1 mt-3 ">
+                      <nb-icon icon="trash-outline" status="danger"></nb-icon>
+                    </div>
+
+
+                </div>
+                <!-- End Tasks -->
+
+              </div>
+
+            </nb-card-body>
+          </nb-card>
+        </div>
+        <!-- End Topics -->
 
       </div>
 

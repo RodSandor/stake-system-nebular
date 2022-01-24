@@ -14,6 +14,7 @@ import {
   NbSelectModule,
   NbDatepickerModule,
   NbTimepickerModule,
+  NbButtonModule,
 } from '@nebular/theme';
 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -31,6 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbEvaIconsModule,
     NbActionsModule,
     NbLayoutModule,
+    NbButtonModule,
     NbSelectModule,
     NbInputModule,
     NbCardModule,
@@ -47,6 +49,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbEvaIconsModule,
     NbActionsModule,
     NbSidebarModule,
+    NbButtonModule,
     NbLayoutModule,
     NbSelectModule,
     NbInputModule,
