@@ -10,19 +10,19 @@ export interface Meeting {
   startedAt: Time;
   endedAt: Time;
   registeredBy: string;
-  topics: MeetingTopics[];
+  topics: MeetingTopic[];
 }
 
-export interface MeetingTopics {
+export interface MeetingTopic {
   id: number;
   notes: string;
   decisions: string;
-  designation: MeetingDesignation[];
+  tasks: MeetingTask[];
 }
 
-export interface MeetingDesignation {
+export interface MeetingTask {
   id: number;
   task: string;
-  designationTo: string;
+  designatedTo: string;
   dueDate: Date;
 }

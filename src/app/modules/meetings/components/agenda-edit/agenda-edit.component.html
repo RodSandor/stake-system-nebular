@@ -1,6 +1,9 @@
 <nb-card>
   <nb-card-body>
     <h4>Meeting Agenda</h4>
+    <nb-actions size="small">
+      <nb-action icon="nb-disk"></nb-action>
+    </nb-actions>
 
     <form (ngSubmit)="onSubmit()" [formGroup]="agendaForm">
       <div class="row">
@@ -94,62 +97,10 @@
           </button>
         </div>
 
-        <!-- Start Topics -->
-        <div class="container mt-3">
-          <nb-card>
-            <nb-card-body>
-              <div class="row">
-                <div class="col-12 mt-3">
-                  <label for="notes">Notes</label>
-                  <textarea id="notes" nbInput fullWidth placeholder="Notes"></textarea>
+        <div class="col-12 mt-3">
+          <app-agenda-topic-edit></app-agenda-topic-edit>
 
-                </div>
-
-                <div class="col-12 mt-3">
-                  <label for="decisions">Decisions</label>
-                  <textarea id="decisions" nbInput fullWidth placeholder="Decisions"></textarea>
-
-                </div>
-
-                <div class="col-1 mt-3">
-                  <nb-actions size="small">
-                    <nb-action icon="plus-outline"></nb-action>
-                  </nb-actions>
-                </div>
-
-                <!-- Start Tasks -->
-                <div class="row">
-
-                    <div class="col-12 col-md-4 mt-3">
-                      <input type="text" nbInput fullWidth placeholder="Task">
-                    </div>
-
-                    <div class="col-12 col-md-4 mt-3">
-                      <nb-select fullWidth placeholder="Designated To">
-                        <nb-option value="">Option empty</nb-option>
-                      </nb-select>
-
-                    </div>
-
-                    <div class="col-2 mt-3">
-                      <input nbInput fullWidth placeholder="Due Date" [nbDatepicker]="dateTimePicker">
-                      <nb-datepicker #dateTimePicker></nb-datepicker>
-                    </div>
-
-                    <div class="col-1 mt-3 ">
-                      <nb-icon icon="trash-outline" status="danger"></nb-icon>
-                    </div>
-
-
-                </div>
-                <!-- End Tasks -->
-
-              </div>
-
-            </nb-card-body>
-          </nb-card>
         </div>
-        <!-- End Topics -->
 
       </div>
 
