@@ -1,8 +1,9 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {
   NbSidebarModule,
   NbLayoutModule,
@@ -19,7 +20,7 @@ import {
 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ListComponent } from './components/list/list.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 
 @NgModule({
   declarations: [SidebarComponent, ListComponent],
@@ -29,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     ReactiveFormsModule,
+    Ng2SmartTableModule,
     NbEvaIconsModule,
     NbActionsModule,
     NbLayoutModule,
@@ -42,6 +44,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
   ],
   exports: [
+    Ng2SmartTableModule,
     ReactiveFormsModule,
     NbTimepickerModule,
     NbDatepickerModule,
@@ -53,6 +56,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbLayoutModule,
     NbSelectModule,
     NbInputModule,
+    ListComponent,
     NbCardModule,
     NbMenuModule,
     NbIconModule,
