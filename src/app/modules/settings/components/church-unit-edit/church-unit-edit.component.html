@@ -1,1 +1,31 @@
-<p>church-unit-edit works!</p>
+<nb-card>
+  <nb-card-body>
+    <form (ngSubmit)="onSubmit()" [formGroup]="churchUnitForm">
+      <div class="row">
+        <div class="col-12">
+          <button nbButton outline status="success" [disabled]="!churchUnitForm.valid">Save</button>
+          <button nbButton outline status="warning" [hidden]="!churchUnitForm.touched" (click)="onResetForm()">Clean</button>
+
+          <div class="row">
+            <div class="col-12 col-md-5 form-input">
+              <input type="text" nbInput fullWidth placeholder="Name" formControlName="name">
+            </div>
+
+            <div class="col-12 col-md-5 form-input">
+              <input type="text" nbInput fullWidth placeholder="Unit ID" formControlName="unitId">
+            </div>
+
+            <div class="col-12 col-md-5 form-input">
+              <nb-select multiple fullWidth placeholder="Select Unit Type" formControlName="unitType">
+                <nb-option value="1">Option 1</nb-option>
+              </nb-select>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>
