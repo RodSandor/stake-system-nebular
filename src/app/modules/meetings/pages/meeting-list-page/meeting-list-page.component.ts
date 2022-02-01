@@ -32,7 +32,7 @@ export class MeetingListPageComponent implements OnInit {
         title: 'Meetings'
       },
       username: {
-        title: 'User Name'
+        title: 'Registered by'
       },
 
     }

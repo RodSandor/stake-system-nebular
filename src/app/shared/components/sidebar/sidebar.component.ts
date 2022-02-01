@@ -32,16 +32,16 @@ export class SidebarComponent implements OnInit {
     {
       title: 'Settings',
       expanded: true,
-      icon: 'cors',
+      icon: 'settings-2-outline',
       children: [
         {
           title: 'Create User',
-          icon: 'user-outline',
+          icon: 'person-add-outline',
           link: 'settings/user/create'
         },
         {
           title: 'Create Church Unit',
-          icon: 'building-outline',
+          icon: 'plus-outline',
           link: 'settings/church-unit/create'
         },
       ],
