@@ -1,0 +1,111 @@
+<!-- Start Topics -->
+<form [formGroup]="topicForm">
+  <nb-card>
+    <nb-card-body>
+
+      <h5>Topics</h5>
+
+      <div class="row">
+        <div class="col-12 mt-3">
+          <label class="form-label" for="notes">Notes</label>
+          <textarea
+            formControlName="notes"
+            placeholder="Notes"
+            id="notes"
+            fullWidth
+            nbInput
+          >
+          </textarea>
+
+        </div>
+
+        <div class="col-12 mt-3">
+          <label class="form-label" for="decisions">Decisions</label>
+          <textarea
+            formControlName="decisions"
+            placeholder="Decisions"
+            id="decisions"
+            fullWidth
+            nbInput
+          ></textarea>
+
+        </div>
+
+        <div class="col-12 col-md-1 mt-3">
+          <nb-actions size="small">
+            <nb-action
+              icon="plus-outline"
+              (click)="onAddTask()"
+            ></nb-action>
+          </nb-actions>
+        </div>
+
+        <!-- Start Tasks -->
+        <div class="row" formArrayName="tasks">
+
+          <div
+            *ngFor="let taskCtrl of tasksCtrls; let i = index"
+            [formGroupName]="i"
+            class="row"
+          >
+
+            <div class="col-12 col-md-4 mt-3">
+              <input
+                formControlName="task"
+                placeholder="Task"
+                type="text"
+                fullWidth
+                nbInput
+              />
+            </div>
+
+            <div class="col-12 col-md-4 mt-3">
+              <nb-select
+                formControlName="designatedTo"
+                placeholder="Designated To"
+                fullWidth
+              >
+                <nb-option [value]="">Option empty</nb-option>
+              </nb-select>
+
+            </div>
+
+            <div class="col-12 col-ms-2 mt-3">
+              <input
+                formControlName="dueDate"
+                [nbDatepicker]="dateTimePicker"
+                placeholder="Due Date"
+                fullWidth
+                nbInput
+              >
+              <nb-datepicker #dateTimePicker></nb-datepicker>
+            </div>
+
+            <div class="col-3 col-md-1 mt-3">
+              <button
+                (click)="onDeleteTask(i)"
+                status="danger"
+                nbButton
+                outline
+              >
+
+                <nb-icon
+                  [options]="{ animation: { type: 'zoom' } }"
+                  class="text-center"
+                  icon="trash-outline"
+                ></nb-icon>
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+        <!-- End Tasks -->
+
+      </div>
+
+    </nb-card-body>
+  </nb-card>
+</form>
+<!-- End Topics -->

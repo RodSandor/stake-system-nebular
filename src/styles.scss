@@ -1,8 +1,33 @@
-@use 'themes' as *;
+@use "themes" as *;
 
-@use '@nebular/theme/styles/globals' as *;
+@use "@nebular/theme/styles/globals" as *;
 
 @include nb-install() {
   @include nb-theme-global();
-};
+}
 /* You can add global styles to this file, and also import other style files */
+
+@import './assets/styles/colors.scss';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+form {
+  .form-input {
+    margin-top: 10px;
+  }
+  .action-icons {
+    font-size: 1.6rem;
+  }
+  input.ng-invalid.ng-touched {
+    border: 1px solid $warning;
+  }
+}
+
+
+

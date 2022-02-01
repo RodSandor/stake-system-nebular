@@ -29,6 +29,23 @@ export class SidebarComponent implements OnInit {
         },
       ],
     },
+    {
+      title: 'Settings',
+      expanded: true,
+      icon: 'settings-2-outline',
+      children: [
+        {
+          title: 'Create User',
+          icon: 'person-add-outline',
+          link: 'settings/user/create'
+        },
+        {
+          title: 'Create Church Unit',
+          icon: 'plus-outline',
+          link: 'settings/church-unit/create'
+        },
+      ],
+    },
   ];
 
   constructor(

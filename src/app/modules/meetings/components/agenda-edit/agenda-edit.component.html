@@ -1,65 +1,118 @@
 <nb-card>
   <nb-card-body>
     <h4>Meeting Agenda</h4>
+    <nb-actions size="small">
+      <nb-action icon="nb-disk"></nb-action>
+    </nb-actions>
 
     <form (ngSubmit)="onSubmit()" [formGroup]="agendaForm">
       <div class="row">
 
-        <div class="col-12 col-md-3">
-          <nb-select fullWidth placeholder="Meeting">
+        <div class="col-12 col-md-3 mt-3">
+          <label class="form-label" for="">Meeting Type</label>
+          <nb-select
+            formControlName="type"
+            placeholder="Meeting"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-12 col-md-4">
-          <nb-select fullWidth placeholder="Presided By">
+        <div class="col-12 col-md-4 mt-3">
+          <label class="form-label" for="">Presided By</label>
+          <nb-select
+            formControlName="presidedBy"
+            placeholder="Presided By"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-6 col-md-2">
-          <input nbInput fullWidth placeholder="Meeting Date" [nbDatepicker]="dateTimePicker">
+        <div class="col-12 col-md-2 mt-3">
+          <label class="form-label" for="">Meeting Date</label>
+          <input
+            [nbDatepicker]="dateTimePicker"
+            placeholder="Meeting Date"
+            formControlName="date"
+            fullWidth
+            nbInput
+          >
           <nb-datepicker #dateTimePicker></nb-datepicker>
         </div>
 
-        <div class="col-12 col-md-2">
-          <nb-select fullWidth placeholder="Meeting Format">
+        <div class="col-12 col-md-2 mt-3">
+          <label class="form-label" for="">Attendance</label>
+          <nb-select
+            placeholder="Meeting Format"
+            formControlName="attendance"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-12 col-md-4">
-          <nb-select fullWidth placeholder="Directed By">
+        <div class="col-12 col-md-4 mt-3">
+          <label class="form-label" for="">Conducted By</label>
+
+          <nb-select
+            formControlName="conductedBy"
+            placeholder="Conducted By"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
-        <div class="col-6 col-md-2">
+        <div class="col-12 col-md-2 mt-3">
+          <label class="form-label" for="">Started at</label>
+
           <input
-            nbInput
+            formControlName="startedAt"
+            [nbTimepicker]="timepicker"
             type="text"
             fullWidth
-            [nbTimepicker]="timepicker"
+            nbInput
           />
           <nb-timepicker #timepicker></nb-timepicker>
         </div>
 
-        <div class="col-6 col-md-2">
+        <div class="col-12 col-md-2 mt-3">
+          <label class="form-label" for="">Ended at</label>
+
           <input
-            nbInput
+            [nbTimepicker]="timepicker"
+            formControlName="endedAt"
             type="text"
             fullWidth
-            [nbTimepicker]="timepicker"
+            nbInput
           />
           <nb-timepicker #timepicker></nb-timepicker>
         </div>
 
-        <div class="col-12 col-md-4">
-          <nb-select fullWidth placeholder="Registered By">
+        <div class="col-12 col-md-4 mt-3">
+          <label class="form-label" for="">Registered By</label>
+
+          <nb-select
+            formControlName="registeredBy"
+            placeholder="Registered By"
+            fullWidth
+          >
             <nb-option value="">Option empty</nb-option>
           </nb-select>
         </div>
 
+        <div class="col-12 mt-3">
+          <button nbButton hero status="success" fullWidth>
+            <nb-icon icon="plus-outline" [options]="{ animation: { type: 'zoom' } }"></nb-icon>
+          </button>
+        </div>
+
+        <div class="col-12 mt-3">
+          <app-agenda-topic-edit></app-agenda-topic-edit>
+
+        </div>
 
       </div>
 
