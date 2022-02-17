@@ -1,0 +1,13 @@
+<nb-card>
+  <nb-card-body>
+
+    <div class="col-12 col-md-3">
+      <label for="" class="form-label">Themes</label>
+
+      <nb-select fullWidth [selected]="currentTheme" (selectedChange)="changeTheme($event)">
+        <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+      </nb-select>
+    </div>
+
+  </nb-card-body>
+</nb-card>

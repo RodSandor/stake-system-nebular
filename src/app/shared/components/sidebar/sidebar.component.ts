@@ -35,6 +35,11 @@ export class SidebarComponent implements OnInit {
       icon: 'settings-2-outline',
       children: [
         {
+          title: 'General',
+          icon: 'cube-outline',
+          link: 'settings/general'
+        },
+        {
           title: 'Create User',
           icon: 'person-add-outline',
           link: 'settings/user/create'
