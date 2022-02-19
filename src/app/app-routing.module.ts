@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {
+    path: 'callings',
+    loadChildren: () => import('./modules/callings/callings.module').then(m => m.CallingsModule)
+  },
+  {
     path: 'meetings',
     loadChildren: () => import('./modules/meetings/meetings.module').then(m => m.MeetingsModule)
   },

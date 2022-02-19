@@ -13,8 +13,24 @@ export class SidebarComponent implements OnInit {
 
   items: NbMenuItem[] = [
     {
-      title: 'Meetings',
+      title: 'Callings',
       expanded: true,
+      icon: 'people-outline',
+      children: [
+        {
+          title: 'List',
+          icon: 'list-outline',
+          link: 'callings/list'
+        },
+        {
+          title: 'Calling',
+          icon: 'person-outline',
+          link: 'callings/calling'
+        },
+      ],
+    },
+    {
+      title: 'Meetings',
       icon: 'calendar-outline',
       children: [
         {
@@ -31,7 +47,6 @@ export class SidebarComponent implements OnInit {
     },
     {
       title: 'Settings',
-      expanded: true,
       icon: 'settings-2-outline',
       children: [
         {
