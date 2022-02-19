@@ -7,13 +7,15 @@ import { MeetingsRoutingModule } from './meetings-routing.module';
 import { SharedModule } from './../../shared/shared.module';
 import { CoreModule } from './../../core/core.module';
 import { AgendaTopicEditComponent } from './components/agenda-topic-edit/agenda-topic-edit.component';
+import { AgendaEventComponent } from './components/agenda-event/agenda-event.component';
 
 
 @NgModule({
   declarations: [
     AgendaEditComponent,
     MeetingListPageComponent,
-    AgendaTopicEditComponent
+    AgendaTopicEditComponent,
+    AgendaEventComponent
   ],
   imports: [
     MeetingsRoutingModule,
