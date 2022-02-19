@@ -12,6 +12,18 @@ export class AgendaTopicEditComponent implements OnInit {
   topicForm: FormGroup;
   topics: MeetingTopic;
 
+  selectedOption: number;
+  options = [
+    {
+      id: 1,
+      name: 'task'
+    },
+    {
+      id: 2,
+      name: 'calling'
+    }
+  ]
+
   get tasksCtrls() {
     return (this.topicForm.get('tasks') as FormArray).controls;
   }

@@ -13,7 +13,6 @@ export class MeetingListPageComponent implements OnInit {
       username: "Bret",
       email: "Sincere@april.biz"
     },
-    // ... other rows here
     {
       id: 11,
       metting: "Nicholas DuBuque",
@@ -23,6 +22,9 @@ export class MeetingListPageComponent implements OnInit {
   ];
 
   settings = {
+    actions: {
+      position: 'right'
+    },
     columns: {
       id: {
         title: 'ID',
