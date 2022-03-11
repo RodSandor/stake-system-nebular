@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  gap: 2rem;
+}
+.designation-list {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.speakers {
+  margin-bottom: 2rem;
+}
+.speaker,
+.other {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-end;
+  display: grid;
+  gap: 2rem;
+}

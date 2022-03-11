@@ -8,6 +8,7 @@ import { SharedModule } from './../../shared/shared.module';
 import { CoreModule } from './../../core/core.module';
 import { AgendaTopicEditComponent } from './components/agenda-topic-edit/agenda-topic-edit.component';
 import { AgendaEventComponent } from './components/agenda-event/agenda-event.component';
+import { AgendaEventEditComponent } from './components/agenda-event-edit/agenda-event-edit.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AgendaEventComponent } from './components/agenda-event/agenda-event.com
     AgendaEditComponent,
     MeetingListPageComponent,
     AgendaTopicEditComponent,
-    AgendaEventComponent
+    AgendaEventComponent,
+    AgendaEventEditComponent
   ],
   imports: [
     MeetingsRoutingModule,
