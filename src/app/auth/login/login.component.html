@@ -1,0 +1,25 @@
+<main class="login">
+  <section class="login-card">
+    <header class="header">
+      <nb-icon icon="person"></nb-icon>
+
+      <h1 class="header-title">Login</h1>
+    </header>
+
+    <div class="login-form">
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input nbInput fullWidth type="email" formControlName="email" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input nbInput fullWidth type="password" formControlName="password" />
+        </div>
+
+        <button nbButton fullWidth status="success">Login</button>
+      </form>
+    </div>
+  </section>
+</main>

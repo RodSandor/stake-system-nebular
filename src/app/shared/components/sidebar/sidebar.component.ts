@@ -13,6 +13,11 @@ export class SidebarComponent implements OnInit {
 
   items: NbMenuItem[] = [
     {
+      title: 'Login',
+      icon: 'person-outline',
+      link: 'login'
+    },
+    {
       title: 'Meetings',
       expanded: true,
       icon: 'calendar-outline',
