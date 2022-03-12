@@ -18,27 +18,37 @@
             <div formArrayName="speakers" class="speakers">
 
               <div
-                *ngFor="let speakerCtrl of eventForm.get('speakers').controls; let i = index"
+                *ngFor="let speakerCtrl of speakerCtrls; let i = index"
                 [formGroupName]="i"
                 class="speaker"
               >
                 <div class="event-input">
-                  <label class="form-label">1 speaker</label>
+                  <label class="form-label">{{i + 1}} speaker</label>
                   <input formControlName="speaker" nbInput fullWidth type="text">
                 </div>
 
                 <div class="event-input">
-                  <label class="form-label">Time</label>
-                  <input formControlName="time" [nbTimepicker]="timepicker">
+                  <input nbInput formControlName="time" [nbTimepicker]="timepicker">
                   <nb-timepicker #timepicker></nb-timepicker>
                 </div>
 
                 <div class="action-box">
-                  <button nbButton status="success" class="btn-add" (click)="onAddSpeaker()">
-                    <nb-icon icon="plus-outline"></nb-icon>
-                  </button>
+                  <button
+                  (click)="onAddSpeaker()"
+                  status="success"
+                  class="btn-add"
+                  nbButton
+                  >
+                  <nb-icon icon="plus-outline"></nb-icon>
+                </button>
 
-                  <button nbButton status="danger" class="btn-add" (click)="onDeleteSpeaker(i)">
+                <button
+                    *ngIf="i >= 1"
+                    (click)="onDeleteSpeaker(i)"
+                    class="btn-add"
+                    status="danger"
+                    nbButton
+                  >
                     <nb-icon icon="trash"></nb-icon>
                   </button>
                 </div>
@@ -48,7 +58,7 @@
 
             <div formArrayName="others" class="others">
               <div
-                *ngFor="let otherCtrl of eventForm.get('others').controls; let i = index"
+                *ngFor="let otherCtrl of otherCtrls; let i = index"
                 [formGroupName]="i"
                 class="other"
               >
@@ -64,11 +74,22 @@
                 </div>
 
                 <div class="action-box">
-                  <button nbButton status="success" class="btn-add" (click)="onAddOther()">
+                  <button
+                    (click)="onAddOther()"
+                    status="success"
+                    class="btn-add"
+                    nbButton
+                  >
                     <nb-icon icon="plus-outline"></nb-icon>
                   </button>
 
-                  <button nbButton status="danger" class="btn-add" (click)="onDeleteOther(i)">
+                  <button
+                    *ngIf="i >= 1"
+                    (click)="onDeleteOther(i)"
+                    status="danger"
+                    class="btn-add"
+                    nbButton
+                  >
                     <nb-icon icon="trash"></nb-icon>
                   </button>
                 </div>

@@ -10,15 +10,16 @@ export class AgendaEventEditComponent implements OnInit {
   eventForm: FormGroup;
   editMode: boolean = false;
 
+  get speakerCtrls() {
+    return (<FormArray>this.eventForm.get('speakers')).controls;
+  }
+
+  get otherCtrls() {
+    return (<FormArray>this.eventForm.get('others')).controls;
+  }
+
   constructor() {}
 
-  get speakersCtrl() {
-    return this.eventForm.get('speakers') as FormArray;
-  }
-
-  get othersCtrl() {
-    return this.eventForm.get('others') as FormArray;
-  }
 
   ngOnInit(): void {
     this.initForm();
@@ -53,8 +54,18 @@ export class AgendaEventEditComponent implements OnInit {
   private initForm() {
     let eventCondutor = '';
     let eventPianist = '';
-    let eventSpeakers = new FormArray([]);
-    let eventOthers = new FormArray([]);
+    let eventSpeakers = new FormArray([
+      new FormGroup({
+        speaker: new FormControl(null, Validators.required),
+        time: new FormControl(null)
+      })
+    ]);
+    let eventOthers = new FormArray([
+      new FormGroup({
+        designation: new FormControl(null),
+        name: new FormControl(null)
+      })
+    ]);
 
     if(this.editMode) {}
 

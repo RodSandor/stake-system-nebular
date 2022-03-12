@@ -1,8 +1,11 @@
+.event-form {
+   padding: 2.5rem;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
-  gap: 2rem;
+  gap: 1.3rem;
 }
 .designation-list {
   grid-column-start: 1;
@@ -15,6 +18,12 @@
 .other {
   grid-template-columns: repeat(3, 1fr);
   align-items: flex-end;
+  margin-bottom: 1rem;
   display: grid;
   gap: 2rem;
+}
+.action-box {
+  button {
+    margin: 5px;
+  }
 }
