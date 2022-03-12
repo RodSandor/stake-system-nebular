@@ -26,3 +26,9 @@ export interface MeetingTask {
   designatedTo: string;
   dueDate: Date;
 }
+
+export enum MeetingType {
+  stakePresidency = 'Stake Presidency',
+  highPriests = 'High Priests',
+  events = 'Events',
+}
