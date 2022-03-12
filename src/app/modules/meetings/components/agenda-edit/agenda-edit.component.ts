@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-agenda-edit',

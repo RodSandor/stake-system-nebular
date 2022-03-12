@@ -27,6 +27,11 @@ export class SidebarComponent implements OnInit {
           icon: 'file-text-outline',
           link: 'meetings/agenda/create'
         },
+        {
+          title: 'Create Event Agenda',
+          icon: 'file-text-outline',
+          link: 'meetings/agenda/event/create'
+        },
       ],
     },
     {
